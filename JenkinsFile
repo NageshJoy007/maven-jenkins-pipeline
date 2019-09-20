@@ -13,13 +13,13 @@ pipeline {
 		
 		stage('Compile') { 
             steps {
-                sh 'mvn compile' 
+                sh 'docker run -t -v "$PWD":/usr/src -w /usr/src -v $HOME/.m2:/root/.m2 markhobson/maven-chrome mvn compile' 
             }
         }
 		
 		stage('test') { 
             steps {
-                sh 'mvn test -Dgroups=productSearchTest' 
+                sh 'docker run -t -v "$PWD":/usr/src -w /usr/src -v $HOME/.m2:/root/.m2 markhobson/maven-chrome mvn test -Dgroups=-Dgroups=productSearchTest' 
             }
         }
 		
