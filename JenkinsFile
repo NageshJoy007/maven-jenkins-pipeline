@@ -22,14 +22,11 @@ pipeline {
             }
         }
 		
-    }
-	post {
-        
-		always {
-		
-            //archiveArtifacts artifacts: '$PWD\\target\\*.jar', fingerprint: true
-            sh ls
-			
+        stage('post') { 
+            steps {
+                sh 'ls'
+            }
         }
     }
+	
 }
