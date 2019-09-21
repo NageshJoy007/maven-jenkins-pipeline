@@ -24,7 +24,7 @@ pipeline {
 		
         stage('post') { 
             steps {
-                sh 'ls'
+                sh 'pwd'
             }
         }
     }
