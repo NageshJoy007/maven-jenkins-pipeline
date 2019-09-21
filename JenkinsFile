@@ -22,11 +22,8 @@ pipeline {
             }
         }
 		
-        stage('post') { 
-            steps {
-                sh 'pwd'
-            }
-        }
+        stage 'Archive Artifacts'
+            archiveArtifacts artifacts: 'target/*.jar'
     }
 	
 }
