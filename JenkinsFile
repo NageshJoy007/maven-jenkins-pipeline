@@ -22,13 +22,22 @@ pipeline {
             }
         }
 		
-        stage ('Publish Reports') {
-            steps {
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './target/surefire-reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
-            }
+        // stage ('Publish Reports') {
+        //     steps {
+        //         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './target/surefire-reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+        //     }
+        // }
+            
+            
+    }
+
+    post {
+        
+		always {
+		
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './target/surefire-reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+			
         }
-            
-            
     }
 	
 }
