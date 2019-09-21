@@ -27,7 +27,8 @@ pipeline {
         
 		always {
 		
-            archiveArtifacts artifacts: '$PWD\\target\\*.jar', fingerprint: true
+            //archiveArtifacts artifacts: '$PWD\\target\\*.jar', fingerprint: true
+            sh ls
 			
         }
     }
