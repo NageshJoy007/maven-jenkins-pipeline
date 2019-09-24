@@ -14,11 +14,13 @@
 	
 	<parameter name="browserName" value="chrome"></parameter>
 
-	<!-- <test name="LoginTest">
+	<!--
+	 <test name="LoginTest">
 		<classes>
 			<class name="com.tests.LoginTest"></class>
 		</classes>
-	</test> -->
+	</test>
+	 -->
 	
 	<test name="ProductSearchTest">
 		<classes>
